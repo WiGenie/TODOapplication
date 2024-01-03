@@ -1,6 +1,6 @@
 package com.teamsparta.todoapp.domain.dto
 
-data class UpdateTodoResponse(
+data class UpdateTodoRequest(
         val title: String,
         val name: String,
         val detail: String,
