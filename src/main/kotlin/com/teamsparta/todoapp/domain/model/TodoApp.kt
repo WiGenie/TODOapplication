@@ -23,8 +23,10 @@ class TodoApp(
 
     @Enumerated(EnumType.STRING)
     @Column(name = "complete", nullable = false)
-    var complete: CompleteTodo = CompleteTodo.FALSE
+    var complete: CompleteTodo = CompleteTodo.FALSE,
 
+    @OneToMany(mappedBy = "todo", cascade = [CascadeType.ALL], orphanRemoval = true, fetch = FetchType.LAZY)
+    var comments: MutableList<Comment> = mutableListOf(),
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +34,14 @@ class TodoApp(
 
     fun isCompleted(){
         complete = CompleteTodo.TRUE
+    }
+
+    fun addComment(comment: Comment){
+        comments.add(comment)
+    }
+
+    fun removeComment(comment: Comment){
+        comments.remove(comment)
     }
 
 }

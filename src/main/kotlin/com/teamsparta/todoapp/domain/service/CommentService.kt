@@ -9,7 +9,7 @@ interface CommentService {
 
     fun submitComment(todoId: Long, request: CommentRequest): CommentResponse
 
-    fun updateComment(todoId: Long, request: CommentRequest, commentId: Long): CommentResponse
+    fun updateComment(todoId: Long, commentId: Long, request: CommentRequest): CommentResponse
 
-    fun deleteComment(todoId: Long, request: CommentRequest,commentId: Long): CommentResponse
+    fun deleteComment(todoId: Long, commentId: Long, request: CommentRequest): String
 }
