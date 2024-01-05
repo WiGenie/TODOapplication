@@ -54,10 +54,11 @@ class CommentController(
         @PathVariable todoId: Long,
         @PathVariable commentId: Long,
         @RequestBody deleteCommentRequest: CommentRequest,
-        ): ResponseEntity<CommentResponse> {
+        ): ResponseEntity<String> {
+        val result= commentService.deleteComment(todoId, commentId, deleteCommentRequest)
         return ResponseEntity
-            .status(HttpStatus.NO_CONTENT)
-            .body(commentService.deleteComment(todoId, commentId, deleteCommentRequest))
+            .status(HttpStatus.OK)
+            .body(result)
     }
 
 }

@@ -39,6 +39,11 @@ class TodoApp(
     fun addComment(comment: Comment){
         comments.add(comment)
     }
+
+    fun removeComment(comment: Comment){
+        comments.remove(comment)
+    }
+
 }
 
 fun TodoApp.toResponse(): TodoResponse{

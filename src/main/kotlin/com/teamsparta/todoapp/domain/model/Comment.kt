@@ -22,9 +22,6 @@ class Comment(
 //    TodoApp에 아무것도 작성하지 않았으면(@onetomany)
 //    다대일 단방향 (삭제 문제로 양방향으로 바꿨음...)
 ) {
-    fun addComment(comment: Comment) {
-todo.comments.add
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
